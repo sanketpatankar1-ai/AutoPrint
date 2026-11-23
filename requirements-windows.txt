@@ -1,0 +1,4 @@
+pywin32>=308; sys_platform == 'win32'
+python-dotenv>=1,<2
+Pillow>=11,<14
+pypdfium2>=5,<6

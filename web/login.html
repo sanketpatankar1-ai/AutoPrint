@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f8fb" />
+    <title>Owner sign in · AutoPrint</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script defer src="/assets/icons.js"></script>
+    <script defer src="/assets/login.js"></script>
+  </head>
+  <body class="signin">
+    <header class="access-head">
+      <a class="brand" href="/owner"
+        ><span class="mark" data-icon="printer"></span>AutoPrint</a
+      ><span class="access-divider"></span
+      ><span class="muted">Owner workspace</span
+      ><a class="customer-link" href="/print"
+        >Customer portal <i data-icon="arrowUpRight"></i
+      ></a>
+    </header>
+    <main class="access-grid">
+      <section class="studio">
+        <div class="studio-head">
+          <span class="studio-label"
+            ><i data-icon="layers"></i> Print operations</span
+          >
+          <h1>Your print floor,<br />in focus.</h1>
+          <p>Orders, payments and printer activity in one workspace.</p>
+        </div>
+        <div class="printer-art" aria-hidden="true">
+          <div class="art-orbit"></div>
+          <div class="art-orbit second"></div>
+          <div class="art-shadow"></div>
+          <div class="machine">
+            <div class="paper-feed"></div>
+            <div class="input-sheet">
+              <b>Print proof</b>
+              <div class="sheet-lines"></div>
+              <div class="swatches"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="housing"></div>
+            <div class="front-housing">
+              <div class="indicator"><b></b><b></b><b></b></div>
+              <div class="machine-name">AutoPrint</div>
+              <div class="paper-slot"></div>
+            </div>
+            <div class="out-sheet">
+              <div class="halftone"></div>
+              <div class="output-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="studio-foot">
+          <span class="cmyk"><b></b><b></b><b></b><b></b></span
+          ><span>AutoPrint OS</span><span class="regmark">⊕</span>
+        </div>
+      </section>
+      <section class="auth-side">
+        <div class="auth-box">
+          <span class="form-icon" data-icon="fingerprint"></span>
+          <h2>Welcome back</h2>
+          <p class="sub">Sign in to your owner dashboard.</p>
+          <form id="login">
+            <label
+              >Email address<input
+                type="email"
+                name="email"
+                placeholder="you@business.com"
+                autocomplete="username"
+                required /></label
+            ><label
+              >Password<span class="password-wrap"
+                ><input
+                  name="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required /><button
+                  type="button"
+                  id="reveal"
+                  aria-label="Show password"
+                  data-icon="eye"
+                ></button></span
+            ></label>
+            <p class="form-error" id="error" role="alert"></p>
+            <button class="primary wide" type="submit">
+              Sign in <i data-icon="arrowRight"></i>
+            </button>
+          </form>
+          <div class="access-note">
+            <i data-icon="shield"></i
+            ><span>Restricted to authorized owners and administrators.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

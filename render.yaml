@@ -1,0 +1,28 @@
+# Paid persistent disk required for SQLite. Review Render charges before creating.
+services:
+  - type: web
+    name: autoprint
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn autoprint.app:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /health/ready
+    disk:
+      name: autoprint-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: AUTOPRINT_DATA
+        value: /var/data
+      - key: PRINT_AGENT_TOKEN
+        generateValue: true
+      - key: PUBLIC_ORIGIN
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false

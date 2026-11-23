@@ -1,0 +1,68 @@
+.customer [hidden]{display:none!important}
+.customer{background:#f6f5fa}
+.customer .access-head{height:68px;padding:0 clamp(16px,5vw,72px);border-bottom:1px solid var(--line)}
+.portal-label{color:var(--muted);font-size:14px}
+.customer-main{max-width:1080px;margin:clamp(18px,4vw,48px) auto;display:grid;gap:18px;align-items:start;padding:0 clamp(12px,3vw,32px)}
+.customer #shop{grid-column:1/-1;margin:0}
+.customer-main .panel{min-width:0;margin:0;border-radius:20px;padding:clamp(18px,3vw,32px);box-shadow:0 6px 24px #34265108}
+.customer h1{font-size:clamp(27px,4vw,38px);line-height:1.12;letter-spacing:-.045em;margin:0 0 8px}
+.customer .sub{margin:0 0 18px}
+.customer .file-drop{display:grid;place-items:center;gap:5px;position:relative;min-height:145px;text-align:center;padding:16px;border:1.5px dashed #ac99e1;border-radius:14px;background:#f8f5ff;color:#443573;cursor:pointer}
+.file-drop:focus-within,.customer summary:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.customer .file-drop input{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0;border:0}
+.upload-icon{display:grid;place-items:center;background:#ede7ff;color:#6046ba;border-radius:12px;width:42px;height:42px}
+.upload-icon svg{width:23px;height:23px}
+#file-info,.estimate small,.order-meta,.order-body{color:var(--muted);font-size:13px}
+#file-name,.order-heading,.order-body,#print-receipt{overflow-wrap:anywhere;min-width:0}
+.customer fieldset{margin:0;border:0;padding:0;min-width:0}
+.customer legend{padding:0;margin:0 0 10px;font-size:16px;font-weight:700}
+.option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.option-grid label{min-width:0}
+.customer .option-grid :is(input,select){display:block;margin:5px 0 0;width:100%;height:44px;padding:0 10px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink);font:inherit}
+.customer .estimate{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0 0;border-top:1px solid var(--line)}
+.estimate small{display:block}.estimate b{font-size:24px;color:#50369e}.customer .primary.wide{margin:0;min-height:48px}
+.customer :is(summary,.secondary){cursor:pointer}.customer summary{line-height:1.6}
+#thumbnail{max-width:100%;display:block;object-fit:contain;margin:10px auto;background:#f4f3f7;border-radius:6px}
+.customer .orders-panel h2{font-size:22px;margin:0 0 12px}
+.order-card{border-top:1px solid var(--line);padding:12px 0}.order-card:first-child{border:0}
+.order-card summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:5px 10px;list-style:none;padding:5px 0}
+.order-card summary::-webkit-details-marker{display:none}
+.order-meta{grid-column:1/-1}.order-meta::after{content:'⌄';float:right;color:#634bab}
+.order-card[open] .order-meta::after{content:'⌃'}
+.order-body{background:#f8f7fb;padding:12px;border-radius:9px;margin-top:7px}
+.order-body p{margin:0 0 6px}.order-body img{display:block;max-width:100%;height:auto}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.customer .secondary{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 12px;text-decoration:none;margin:0}
+#checkout-feedback:empty,#feedback:empty,#preview-message:empty{display:none}
+#checkout-feedback,#feedback{font-size:14px;color:#50369e}
+.success-art{background:#f2eeff;border-radius:14px;text-align:center;line-height:0;margin-bottom:16px}
+.printer-drawing{max-width:100%;height:142px}
+.success-label{display:inline-flex;align-items:center;gap:6px;color:#136043;background:#e1f6ea;border-radius:18px;padding:4px 12px;font-weight:650;margin:0 0 10px}
+.tracking{padding:12px 16px;background:#faf9fc;border-radius:12px}.tracking p{margin:0;font-weight:650}
+#timeline{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px}#timeline li{display:flex;gap:8px;align-items:center;color:var(--muted)}
+#timeline li::before{content:'';width:9px;height:9px;border-radius:50%;border:1px solid #aaa0bf}
+#timeline .done::before{background:#674bbc;border-color:#674bbc}#timeline [aria-current]{font-weight:bold;color:#50369e}
+@keyframes feed-paper{0%{transform:translateY(-25px);opacity:.25}25%{opacity:1}85%,100%{transform:translateY(0);opacity:1}}
+.printer-drawing.animate .paper-sheet{animation:feed-paper 1.6s cubic-bezier(.22,.61,.36,1) 2 both}
+.tab-hidden .paper-sheet{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.printer-drawing.animate .paper-sheet{animation:none}}
+@media(min-width:880px){.customer-main{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}}
+@media(max-width:380px){.option-grid{gap:10px 8px}.customer-main .panel{padding:16px}.customer .option-grid :is(input,select){font-size:16px;padding:0 5px}}
+
+.customer-main{margin:20px auto;gap:14px}
+.customer-main .panel{padding:clamp(16px,2.5vw,26px)}
+.customer .file-drop{min-height:120px}
+.customer fieldset>label input{display:block;width:100%;min-height:44px;margin:6px 0;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font:inherit}
+#page-help{display:block;color:var(--muted);margin-bottom:14px}
+
+#document-list{display:flex;flex-wrap:wrap;gap:8px}#document-list:empty{display:none}#document-list button{max-width:100%;overflow-wrap:anywhere;text-align:left}#document-list [aria-pressed="true"]{border-color:var(--purple);background:var(--lavender)}
+
+.customer :is(h1,legend,label,summary,.estimate strong){color:var(--ink);visibility:visible}.customer #preview input{width:85px;min-height:44px}.customer #preview summary{padding:10px 0;font-weight:600}
+
+.customer #preview{padding:16px;background:#efedf5;border-radius:12px}
+.customer #preview h2{font-size:18px;margin:0 0 12px}
+.customer #thumbnail{width:100%;height: min(58vh,650px);max-height:650px;object-fit:contain;background:#e5e2ec;margin:12px auto;transition:filter .15s ease-out}
+#thumbnail:not([src]),#thumbnail[src=""]{display:none}
+#preview-message{font-size:14px;color:var(--muted);margin:8px 0;text-align:center}
+#preview-message button{margin-left:8px;min-height:30px;padding:3px 10px;font-size:13px}
+.customer #preview input{background:white;border:1px solid var(--line);border-radius:8px;padding:8px}

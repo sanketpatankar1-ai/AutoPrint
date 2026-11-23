@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Owner workspace · AutoPrint</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script defer src="/assets/icons.js"></script>
+    <script defer src="/assets/dashboard.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside id="sidebar">
+        <a class="brand" href="#overview"
+          ><span class="mark" data-icon="printer"></span>AutoPrint</a
+        >
+        <div class="workspace">
+          <span class="workspace-icon" data-icon="store"></span>
+          <div>
+            <strong id="biz">AutoPrint</strong><small>Owner workspace</small>
+          </div>
+        </div>
+        <nav id="nav"></nav>
+        <div class="side-bottom">
+          <button id="theme"><i data-icon="moon"></i>Change theme</button
+          ><a href="/print" target="_blank" rel="noopener"
+            ><i data-icon="arrowUpRight"></i>Customer portal</a
+          >
+          <div class="profile">
+            <span class="avatar" id="avatar"></span>
+            <div>
+              <strong id="role"></strong><small id="staff-email"></small>
+            </div>
+            <button id="logout" aria-label="Sign out" title="Sign out">
+              <i data-icon="logout"></i>
+            </button>
+          </div>
+        </div>
+      </aside>
+      <div id="scrim"></div>
+      <div class="main-column">
+        <header class="topbar">
+          <button id="menu" aria-label="Open navigation">
+            <i data-icon="menu"></i>
+          </button>
+          <div class="crumb">
+            <i data-icon="panels"></i> Workspace <span>/</span>
+            <strong id="crumb">Overview</strong>
+          </div>
+          <div class="top-actions">
+            <span class="connection" id="live"><b></b>Connecting</span
+            ><a
+              class="icon-btn"
+              href="#notifications"
+              aria-label="Notifications"
+              ><i data-icon="bell"></i
+            ></a>
+          </div>
+        </header>
+        <main id="main" tabindex="-1">
+          <p class="muted">Loading workspace…</p>
+        </main>
+      </div>
+    </div>
+    <div id="toast" role="status"></div>
+    <dialog id="detail">
+      <div id="detail-body"></div>
+      <button class="secondary" id="close-detail">Close</button>
+    </dialog>
+  </body>
+</html>

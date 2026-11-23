@@ -25,6 +25,18 @@ load_dotenv(WEB.parent / ".env", override=False)
 @asynccontextmanager
 async def lifespan(app):
     init()
+    # Provision only a completely new database; never overwrite existing credentials.
+    bootstrap_email=os.getenv("AUTOPRINT_OWNER_EMAIL", "").strip().lower()
+    bootstrap_password=os.getenv("AUTOPRINT_OWNER_PASSWORD", "")
+    if bootstrap_email and bootstrap_password:
+        if "@" not in bootstrap_email or len(bootstrap_email)>254 or len(bootstrap_password)<12:
+            raise RuntimeError("Invalid owner bootstrap configuration")
+        from .store import secret_hash
+        with db(True) as c:
+            if not c.execute("SELECT 1 FROM users LIMIT 1").fetchone():
+                c.execute("INSERT INTO users(email,hash,role) VALUES(?,?,'owner')",
+                          (bootstrap_email,secret_hash(bootstrap_password)))
+                audit(c,"server bootstrap","Created initial owner")
     async def maintain():
         while True:
             try:
